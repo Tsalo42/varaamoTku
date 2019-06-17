@@ -1,0 +1,190 @@
+@import "./variables";
+@import "./mixins";
+
+.espoo-customizations {
+
+  // Typography
+  // ----------
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    font-family: $font-family;
+    font-weight: $font-weight-regular;
+  }
+
+  a {
+    color: $black;
+    font-family: $font-family;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  div {
+    font-family: $font-family;
+  }
+
+  // Navbar
+  // ------
+
+  .brand-logo {
+    background-image: url('../../../../shared/logo/espoo-blue-logo.png');
+  }
+
+  .app-MainNavbar {
+    background-color: $blue;
+  }
+
+  // Footer
+  // ------
+
+  footer {
+    background-color: $blue;
+
+    .brand-link, .brand-link:hover {
+      color: #fff;
+    }
+
+    .feedback-link {
+      color: #ccc;
+    }
+
+    .about-link {
+      color: #fff;
+    }
+  }
+
+  // Home-page
+  // ----------
+
+  .app-HomePage__koro {
+    visibility: hidden;
+  }
+
+  .app-HomePageContent {
+    padding-top: 50px;
+  }
+    
+  .app-HomePageContent__banner {
+    &__linkWrapper {
+      background-color: $blue-light;
+    }
+  }
+  // Search-page
+  // -----------
+
+  .app-SearchControlsContainer {
+    background-color: $blue-light;
+  }
+
+  .app-MapToggle {
+    background-color: $blue-light;
+    button {
+      background-color: $blue-light;
+      border-color: $blue-light;
+    }
+    button:hover,
+    button:active {
+      background-color: darken($blue-light, 5);
+      border-color: darken($blue-light, 5);
+    }
+  }
+
+  // Resource-page
+  // -------------
+
+  .app-ResourceHeader {
+    background-color: $blue-light;
+  }
+
+  .app-TimeSlot {
+    &--disabled {
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
+    &--own-reservation {
+      background-color: $blue;
+
+      &:hover {
+        cursor: not-allowed;
+        background-color: $blue;
+      }
+    }
+  }
+
+  // Admin-resources-page
+  // --------------------
+
+  .availability-view {
+    .top-left, .date-selector {
+      background-color: $blue;
+    }
+    .reservation {
+      background-color: $blue;
+
+      &-link:hover {
+        text-decoration: none;
+      }
+      &.requested {
+        background-color: $warning;
+      }
+      &.disabled {
+        background-color: $red;
+      }
+    }
+
+    .reservation-slot {
+      &-selected {
+        background-color: $blue;
+      }
+    }
+  }
+
+  // About-page
+  // ----------
+
+  .about-page {
+    .about-page-logos {
+      margin-bottom: 20px;
+      margin-top: -15px;
+
+      .aika-logo {
+        height: 40px;
+        margin-top: 20px;
+        margin-right: 10px;
+      }
+      .eu-vipuvoimaa-logo {
+        height: 60px;
+        margin-top: 20px;
+        margin-right: 10px;
+      }
+      .eakr-logo {
+        height: 80px;
+        margin-top: 20px;
+      }
+    }
+  }
+
+  // Modals
+  // ------
+  .modal {
+    .modal-header::before {
+      background-image: url('../../../../shared/logo/espoo-blue-logo.png');
+    }
+  }
+  .app-DatePickerControl__modal-header,
+  .app-PurposeControl__modal-header,
+  .app-PositionControl__modal-header,
+  .app-PeopleCapacityControl__modal-header {
+    h1, h2, h3, h4, h5, h6 {
+      color: white;
+    }
+  }
+}

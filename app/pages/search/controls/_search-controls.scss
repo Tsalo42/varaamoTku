@@ -1,0 +1,405 @@
+.tooltip_class {
+  z-index: 9999999;
+}
+
+.app-SearchControlsContainer {
+  background-color: $copper;
+  position: relative;
+  z-index: 3;
+
+  &__content {
+    padding: 30px 0;
+  }
+  &__control {
+    padding-top: 15px;
+  }
+  &__buttons {
+    padding-top: 15px;
+  }
+  &__submit-button {
+    min-width: 120px;
+  }
+  &__reset-button {
+    img {
+      width: $line-height-computed;
+    }
+  }
+  .input-group-addon {
+    background-color: transparent;
+  }
+  .panel {
+    background-color: transparent;
+    box-shadow: none;
+    margin: 15px 0;
+    .panel-heading {
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+      .panel-title {
+        font-size: 16px;
+        a {
+          padding-left: 24px;
+          cursor: pointer;
+          position: relative;
+          text-decoration: underline;
+          &::before {
+            background-image: url('./images/angle-right.svg');
+            background-repeat: no-repeat;
+            background-size: $line-height-computed;
+            content: ' ';
+            display: inline-block;
+            left: 0;
+            top: -2px;
+            position: absolute;
+            height: $line-height-computed;
+            width: $line-height-computed;
+          }
+        }
+        a[aria-selected='true']::before {
+          background-image: url('./images/angle-down.svg');
+        }
+      }
+    }
+    .panel-body {
+      padding: 0;
+    }
+  }
+
+  .select:before {
+    background-color: $copper;
+  }
+
+  .form-group {
+    margin-bottom: 0;
+  }
+
+  .form-control {
+    color: $black;
+  }
+
+  .form-control[disabled] {
+    background-color: transparent;
+    border-color: $black;
+    color: $black;
+    cursor: default;
+    transition: all 0s ease 0s;
+  }
+
+  .glyphicon-triangle-bottom {
+    font-size: 10px;
+  }
+
+  .btn.btn-link {
+    color: $black;
+  }
+}
+
+// SearchBox
+//
+
+.app-SearchBox {
+  position: relative;
+  .app-SearchControlOverlay__content {
+    padding: 0;
+    .list-group {
+      margin-bottom: 0;
+      max-height: 200px;
+      overflow-y: scroll;
+      .list-group-item {
+        color: $black;
+        padding: 8px 10px;
+      }
+    }
+  }
+}
+
+// PurposeControl styles
+// ---------------------
+
+.app-PurposeControl {
+  display: inline-block;
+  margin-left: 0;
+  position: relative;
+  width: 100%;
+
+  &__show-button {
+    @include search-control-button($blue);
+  }
+
+  .app-SearchControlOverlay__header {
+    background-color: $blue;
+  }
+}
+
+// PositionControl styles
+// ---------------------
+
+.app-PositionControl {
+  &__toggle-content > label {
+    display: flex;
+    justify-content: space-between;
+    font-weight: normal;
+    white-space: normal;
+  }
+
+  &__distance_slider {
+    margin-top: 15px;
+    &_tooltip {
+      z-index: 40000;
+    }
+    .rc-slider-track {
+      background-color: $black;
+    }
+    .rc-slider-handle,
+    .rc-slider-handle:active,
+    .rc-slider-handle:hover,
+    .rc-slider-handle:focus {
+      border-color: $black;
+      box-shadow: none;
+    }
+  }
+
+  .app-SearchControlOverlay__header {
+    background-color: $copper;
+  }
+}
+
+// DatePickerControl styles
+// ------------------------
+
+.app-DatePickerControl {
+  display: inline-block;
+  margin-bottom: 0;
+  position: relative;
+  width: 100%;
+
+  &__icon {
+    width: 22px;
+  }
+
+  &__title {
+    border-right-width: 0;
+    text-align: left;
+    vertical-align: middle;
+
+    img {
+      margin-right: 6px;
+    }
+    img,
+    span {
+      vertical-align: middle;
+    }
+  }
+
+  &__triangle {
+    text-align: right;
+  }
+
+  .app-SearchControlOverlay__overlay {
+    border-top: none;
+  }
+
+  .app-SearchControlOverlay__header {
+    background-color: $green;
+  }
+
+  .DayPicker {
+    display: block;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .DayPicker-NavBar {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .DayPicker-Caption {
+    height: auto;
+    font-weight: 600;
+    line-height: 3rem;
+    font-size: 16px;
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  .DayPicker-NavButton--prev {
+    @include icon-angle-left($black);
+    width: $line-height-computed;
+    height: $line-height-computed;
+    position: static;
+    margin-right: 0;
+  }
+
+  .DayPicker-NavButton--next {
+    @include icon-angle-right($black);
+    width: $line-height-computed;
+    height: $line-height-computed;
+    position: static;
+  }
+
+  .DayPicker-Month {
+    margin: 0;
+    border-collapse: separate;
+    width: 100%;
+  }
+
+  .DayPicker-Day {
+    border: 2px solid $white;
+    margin: 1px;
+    line-height: 1rem;
+    color: $black;
+    background-color: $light-gray;
+    border-radius: 0;
+    font-size: 1.6rem;
+
+    &:focus {
+      outline: none;
+    }
+    &--available:not(.DayPicker-Day--disabled) {
+      background-color: $light-gray;
+      &.DayPicker-Day--selected {
+        background-color: $light-gray;
+      }
+    }
+    &--outside {
+      color: $medium-gray;
+    }
+    &--disabled {
+      cursor: pointer;
+      background-color: $medium-gray;
+      color: $dark-gray;
+    }
+    &--selected,
+    &--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+      color: $white;
+      background-color: $dark-gray;
+    }
+  }
+
+  .DayPicker-Day--today {
+    border: 2px solid $black;
+  }
+
+  .DayPicker-WeekdaysRow {
+    padding: 0.2rem;
+    font-size: 1.4rem;
+  }
+
+  .DayPicker-Weekdays {
+    text-transform: uppercase;
+    font-weight: normal;
+    abbr {
+      border: none;
+      cursor: default;
+      vertical-align: text-top;
+    }
+  }
+
+  .DayPicker-Weekday {
+    color: $black;
+  }
+
+  .DayPicker-WeekNumber {
+    font-size: 14px;
+  }
+}
+
+.app-TimeRangeControl {
+  max-width: 400px;
+
+  @media (min-width: $screen-sm-min) {
+    margin: 0 auto;
+  }
+
+  &__range {
+    align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 8px;
+
+    &-separator {
+      padding: 0;
+      margin: 0 6px;
+    }
+
+    .app-SelectControl {
+      flex: 1 2 25%;
+
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.app-CheckboxControl {
+  padding-top: 15px;
+
+  &__label {
+    font-weight: normal;
+  }
+}
+
+.app-SearchControlOverlay {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+
+  &__overlay {
+    border: 2px solid $black;
+  }
+
+  &__hide {
+    color: $white;
+    right: 0;
+    position: absolute;
+    top: 5px;
+  }
+
+  &__hide:active,
+  &__hide:focus,
+  &__hide:hover {
+    color: $medium-gray;
+    text-decoration: none;
+  }
+
+  &__header {
+    color: $white;
+    height: 40px;
+    h2 {
+      margin: 0 40px 0 15px;
+      line-height: 40px;
+      font-size: 1.6rem;
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &__content {
+    background-color: $white;
+    padding: 20px;
+  }
+}
+
+.app-SearchControlsCheckbox {
+  @media (max-width: $screen-md-max) {
+    &__toggle {
+      float: left;
+    }
+
+    &__label {
+      display: block;
+      padding-left: 60px;
+    }
+  }
+}

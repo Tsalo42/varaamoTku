@@ -1,0 +1,26 @@
+.image-carousel {
+  @media (max-width: $resource-page-width) {
+    margin-left: -($grid-gutter-width/2);
+    margin-right: -($grid-gutter-width/2);
+  }
+  .image-container {
+    background-color: $gray-light;
+    background-position: 50% 50%;
+    background-size: cover;
+    width: 100%;
+    height: $carousel-image-min-height;
+
+    @media (min-width: $screen-xs-min) {
+      height: $carousel-image-mid-height;
+    }
+
+    @media (min-width: $screen-sm-min) {
+      height: $carousel-image-max-height;
+    }
+
+    @media (min-width: $screen-md-min) {
+      width: 100%;
+      height: $carousel-image-max-height;
+    }
+  }
+}

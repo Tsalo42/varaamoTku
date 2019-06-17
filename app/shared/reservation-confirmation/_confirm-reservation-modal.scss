@@ -1,0 +1,59 @@
+.app-ConfirmReservationModal {
+  .modal-dialog {
+    @media (min-width: $screen-sm-min) {
+      width: 700px;
+    }
+  }
+
+  &__editing-texts {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gray-lighter;
+  }
+
+  .reservation-form {
+    .well {
+      margin-left: -15px;
+      margin-right: -15px;
+      padding: 15px;
+    }
+
+    .form-controls {
+      padding-right: 0;
+      padding-bottom: 0;
+    }
+
+    .app-TimeControls {
+      display: flex;
+
+      &__begin-time-control, &__end-time-control {
+        flex: 0 1 140px;
+      }
+
+      &__separator {
+        width: 40px;
+        text-align: center;
+        line-height: 43px;
+      }
+    }
+
+    .terms-and-conditions {
+      .wrapped-text {
+        max-height: 300px;
+        overflow-y: scroll;
+        margin-bottom: 10px;
+        border: 1px solid $gray-light;
+        padding: 10px;
+      }
+    }
+
+    .terms-and-conditions-input-wrapper {
+      .col-sm-offset-3 {
+        margin-left: 0;
+      }
+      label {
+        font-weight: bold;
+      }
+    }
+  }
+}

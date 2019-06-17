@@ -1,0 +1,92 @@
+$reservation-list-label-height: 20px;
+
+.reservation-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .reservation {
+    background-color: $white;
+    position: relative;
+    margin-bottom: 50px;
+    min-height: 180px;
+
+    @media (max-width: $screen-xs-max) {
+      min-height: 200px;
+    }
+
+    .image-container {
+      background-color: #ebedf1;
+      min-height: 180px;
+      max-width: 180px;
+
+      @media (max-width: $screen-md-min) {
+        display: none;
+      }
+
+      img {
+        margin-left: -13px;
+
+        height: 180px;
+        width: 180px;
+      }
+    }
+
+    .reservation-details {
+      margin-top: 10px;
+      min-height: 180px;
+
+      .reservation-state-label-container {
+        font-size: 18px;
+        margin-bottom: 8px;
+        margin-top: -8px;
+        width: 100%;
+
+        .label {
+          display: inline-block;
+          line-height: $reservation-list-label-height;
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+      }
+
+      .location, .timeslot {
+        width: 28.8px;
+        margin-right: 5px
+      }
+
+      .reservation-access-code {
+        font-weight: bold;
+        margin-left: 33.8px;
+      }
+    }
+
+    .action-container {
+      min-height: 180px;
+
+      .buttons {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 25px;
+
+        button {
+          margin-left: 14px;
+          width: 100px;
+
+          @media (max-width: $screen-md-max) {
+            margin-bottom: 10px;
+          }
+
+          @media (max-width: $screen-xs-max) {
+            margin-left: -15px;
+          }
+        }
+      }
+    }
+
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
